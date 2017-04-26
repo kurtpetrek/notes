@@ -1,0 +1,43 @@
+Pure functions should never rely on global variables
+
+Parent scope and child scope
+  Parent scope local function scope child scope function within function with separate local vars
+  
+Anjana functional programming youtube
+
+higher order functions
+  returns a function or takes a function as an arg
+  
+  
+Helpful array methods
+
+forEach
+  only method that does not return a value
+  go through each index in the array and do something
+  
+map
+  go through each index in the array and do something
+  returns array
+  
+filter
+  func tests statement for bool value
+  var nums = [1,2,3];
+  
+  nums.filter(function(val){
+    return val >= 2;
+  });
+  
+  ## will return [2,3];
+  
+  returns array
+  
+reduce
+  returns value
+  takes callback and optional starting value
+  nums = [1,2,3];
+  
+  nums.reduce(function(accu, val){
+    return accu + val;
+  }, 100);
+  
+  ## returns 106

@@ -1,0 +1,99 @@
+rbenv 
+ 
+rbenv version 
+
+rvm
+
+rvm -v
+rvm use 2.4.0
+
+
+Rails
+
+rails s
+-start rails server 
+
+rails new content_cms -d mysql
+- creates new rails folder in current directory called conent_cms using mysql
+
+rails generate
+- shows options
+
+rails generate controller
+- shows options
+
+rails generate controller dog index
+- generates a dog controller
+
+
+
+
+
+rails generate migration nameIt
+# generate db migration
+
+rails generate model ModelName
+# create model modelName is singular
+
+
+
+rails db:migrate
+# used to be rake, runs all db migrations that have not been run
+
+rails db:migrate VERSION=0
+# undo migrations to go back to version 0
+
+rails db:migrate:status
+# show migration status
+
+
+rails db:migrate VERSION=1234
+# migrate to this version number 1234
+
+SQL
+
+mysql -u kp -p
+# start mysql in user kp with a password
+
+exit
+# exit mysql
+
+
+
+SHOW DATABASES;
+
+CREATE DATABASE db_name;
+
+USE db_name;
+
+DROP DATABASE db_name;
+
+
+
+
+GRANT ALL PRIVILEGES ON db_name.*
+TO ‘username’@‘localhost’
+IDENTIFIED BY ‘password’;
+
+SHOW GRANTS FOR ‘username’@‘localhost’;
+
+
+
+SHOW TABLES
+
+SHOW FIELDS FROM name
+
+
+# configure rails to db in config/database.yml file in rails project
+
+
+
+rails db:schema:dump 
+# rails command to test db connection by dumping data in schema file in project
+
+
+
+
+
+
+

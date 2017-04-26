@@ -1,0 +1,25 @@
+$ rails -h
+# shows rails help options
+
+$ bundle install
+# install gem dependincies for project
+
+$ rails new NAMETHISAPP -T --database=postgresql
+# creates new rails application dir without tests using postgresql 
+
+$ rails db:create
+# creates db
+
+$ rails db:migrate
+# migrates db
+
+$ rails s
+# starts rails server
+
+$ rails g scaffold Blog title:string body:text
+# generate a scaffold called Blog
+# run db migrate after scaffold
+# remove scaffold stylesheets to prevent style errors later on
+
+$ rake routes
+# Shows all routes within system when run at route of dev directory

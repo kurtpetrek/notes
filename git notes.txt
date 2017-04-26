@@ -1,0 +1,52 @@
+# Git Notes
+#==============================#
+
+# Check Changes
+$ git diff
+
+# Check Changes with files in staging ground
+$ git diff --staged
+
+# To Delete a file from git
+$ git rm FILE_NAME
+
+# Create new branch from previous commit
+$ git checkout -b BRANCH_NAME SHA_OF_COMMIT
+
+# To take a file back to a previous commit state
+$ git checkout SHA_OF_COMMIT --FILE_NAME
+
+# To revert back to a previous commit
+$ git revert SHA_OF_COMMIT
+
+# Reset to a specific commit, only use on remote commits!
+$ git reset SHA_OF_COMMIT
+
+# Create a new branch from a previous commit
+$ git checkout -b branchname <commit>
+
+# Delete branch
+$ git branch -d BRANCH_TO_DELETE
+
+# To merge branch be in receiving branch with clean working directory
+$ git merge BRANCH_NAME_TO_MERGE_WITH
+## ex merge changes from gh-pages into master
+## current branch set to master, branch is up to date
+## git merge gh-pages
+# merge branch with commit log
+$ git merge --no-ff BRANCH_NAME_TO_MERGE_WITH
+# If there are conflicts with the merge you can abort or resolve
+# abort merge
+$ git merge --abort
+# Otherwise resolve conflicts, find <<<<<<, fix, then add and commit
+
+# Check branches currently merged with current branch
+$ git branch --merged
+
+# Change remote origin of repo
+$ git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
+
+# Clear git cache IMPORTANT when changes are made on .gitignore file
+$ git rm . -r --cached
+
+

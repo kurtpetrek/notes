@@ -1,0 +1,42 @@
+# termianl notes
+
+$ touch doc_name.ext
+# creates a file
+
+$ pwd -options	
+# Prints the working directory; returns the absolute path name of the current directory
+
+$ ls [-options] [path/to/directory]	
+# Lists directory contents
+
+$ cd [-options] [path/to/directory]	
+# Changes the current working directory to the specified directory
+
+$ mkdir [-options] [path/to/directory]	
+# Makes a new directory
+
+$ rm -r [path/to/file] [path/to/file] ...	
+# Removes directories or files permanently
+
+$ rm -rf [path/to/file]
+# Removes directories permanently
+
+$ mv [-options] [path/to/file] [path/to/directory]	
+# Moves directories or files to a new locale
+
+$ mv [-options] [path/to/file] [NEW_FILE_NAME]	
+# Renames a file or directory
+
+$ diff -u file_one.ext file_two.ext
+
+$ echo "content > file.txt
+# writes content to a file removing previous content
+
+$ echo "content >> file.txt
+# writes content to the end of a file
+
+$ cat file.txt
+# see the contents of a file within the terminal
+
+$ cp file.txt new_file.txt
+# copy the contents of a file to a new file
