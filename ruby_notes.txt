@@ -1,0 +1,26 @@
+https://www.codecademy.com/articles/glossary-ruby
+
+# for loop
+
+for k in 1..3
+  print k
+end
+
+
+
+# each , go through and array and do something to each item
+
+array.each do |arg|
+  # Do something to each element, referenced as arg
+end
+
+  # or
+
+array.each { |arg|
+  # Do something to each element, referenced as arg
+}
+
+
+# times
+
+3.times { print "Hello!" }

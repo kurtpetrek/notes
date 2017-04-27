@@ -1,3 +1,14 @@
+# TERMINAL
+# ===================
+GENERAL
+
+model names should be singular, controller names should be plural 
+
+db:migrate migrates data into the schema creating tables and updating the db
+
+
+# ===================
+
 $ rails -h
 # shows rails help options
 
@@ -23,3 +34,34 @@ $ rails g scaffold Blog title:string body:text
 
 $ rake routes
 # Shows all routes within system when run at route of dev directory
+
+$ rails g controller Pages home about contact
+# Rails generator creating Pages controller with 3 pages
+# good for static(ish) pages
+
+$ rails g model Skill title:string percent_utilized:integer
+# rails generator for a model calles skill
+
+$ rails c
+# opens rails console giving a direct connection to the database
+
+  # Rails terminal commands
+
+  $ Skill.create!(title: "Rails", percent_utilized: 75)
+  # create new entry in db, ! will throw a visual error if something is not entered correctly
+  
+  $ Skill.all
+  # runs db query bringing back all items in the Skill table
+  
+  $ exit
+  # or ctrl D to exit rails console
+
+
+# RUBY
+# ===================
+
+raise
+# causes error, can be used to make sure code is being hit but will cause an error to display
+
+@var_name
+# creates an instance variable
