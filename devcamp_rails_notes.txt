@@ -6,6 +6,8 @@ model names should be singular, controller names should be plural
 
 db:migrate migrates data into the schema creating tables and updating the db
 
+The difference between delete and destroy is that delete will clear out an entry in the database completely with no callbacks, destroy will thow an error if then db entry is protected by some other code stopping the process
+
 
 # ===================
 
@@ -19,10 +21,10 @@ $ rails new NAMETHISAPP -T --database=postgresql
 # creates new rails application dir without tests using postgresql 
 
 $ rails db:create
-# creates db
+# creates db for rails app
 
 $ rails db:migrate
-# migrates db
+# migrates db, run after every generator task
 
 $ rails s
 # starts rails server
@@ -33,19 +35,27 @@ $ rails g scaffold Blog title:string body:text
 # remove scaffold stylesheets to prevent style errors later on
 
 $ rake routes
-# Shows all routes within system when run at route of dev directory
+# Shows all routes within app when run at root of dev directory
+
+$ rake routes | grep portfolio
+$ Shows all routes within app that have the word portfolio
 
 $ rails g controller Pages home about contact
 # Rails generator creating Pages controller with 3 pages
 # good for static(ish) pages
 
 $ rails g model Skill title:string percent_utilized:integer
-# rails generator for a model calles skill
+# rails generator for a model called skill
+
+$ rails g resource Portfolio title:string subtitle:string body:text main_image:text thumb_image:text
+# rails generator for a resource with database entries that can hold the set data types
+# images in database should be text links stating where that image lives, use the text type instead of string incase link is more than 140 characters
+# resource generators are like very skinny scaffolds
 
 $ rails c
 # opens rails console giving a direct connection to the database
 
-  # Rails terminal commands
+  ### Rails terminal commands ##
 
   $ Skill.create!(title: "Rails", percent_utilized: 75)
   # create new entry in db, ! will throw a visual error if something is not entered correctly
@@ -55,6 +65,10 @@ $ rails c
   
   $ exit
   # or ctrl D to exit rails console
+  
+# To create some sample data for application use seeds.rb file then run
+$ rails db:setup
+# !! This command should only be run in development during testing as all other data in database will be cleared out !!
 
 
 # RUBY
@@ -65,3 +79,27 @@ raise
 
 @var_name
 # creates an instance variable
+
+<%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil?%>
+# This will print an img element with the portfolio_items thumb_image entry from the db if it is not empty, if it is empty it will not display an image or throw error same as 
+<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%>
+
+# embeded ruby link
+<%= link_to "Create New Item", new_portfolio_path %>
+# "" is text for link , is path to link
+
+
+
+# =======================
+
+
+# ROUTES
+# ========================
+
+root to: 'pages#home'
+# This sets up the default route of the site, similar to telling rails what the index page is
+
+get 'about', to: 'pages#about'
+# this allows the route site.com/about to route directly to the about page in pages
+
+# ========================

@@ -1,0 +1,23 @@
+http://guides.rubyonrails.org/generators.html
+
+# To prevent rails from automatically generating stylesheets that need to be deleted put the following code in /config/application.rb under class Application < Rails::Application
+
+config.generators do |g|
+  g.orm              :active_record
+  g.template_engine  :erb
+  g.test_framework   :test_unit, fixture: false
+  g.stylesheets      false
+  g.javascripts      false
+end
+
+
+
+## The following did not work check guide to troubleshoot
+
+# To overide the default table format generated for scaffolds with a custom format on the index page create the following path within the lib directory
+
+lib>templates>erb>scaffold>index.html.erb
+
+# Next go to rails source code for scaffolds and copy the page which you would like to customize https://github.com/rails/rails/tree/master/railties/lib/rails/generators/erb/scaffold/templates then change the html and content to the desired html format
+
+## =============================
