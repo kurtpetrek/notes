@@ -1,6 +1,5 @@
 $ mysql -u root -p
 # login to mysql as root user with password
-# oldDogNumbers
 
 $ SHOW DATABASES;
 # Shows all databases
